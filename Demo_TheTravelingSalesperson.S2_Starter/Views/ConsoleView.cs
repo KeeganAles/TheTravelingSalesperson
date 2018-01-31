@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Demo_TheTravelingSalesperson
 {
     /// <summary>
-    /// MVC View class
+    /// MVC View class for velis
     /// </summary>
     class ConsoleView
     {
