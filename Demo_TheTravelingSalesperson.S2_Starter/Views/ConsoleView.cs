@@ -88,7 +88,7 @@ namespace Demo_TheTravelingSalesperson
 
             ConsoleUtil.DisplayReset();
 
-            ConsoleUtil.DisplayMessage("Written by John Velis");
+            ConsoleUtil.DisplayMessage("Written by Keegan Ales");
             ConsoleUtil.DisplayMessage("Northwestern Michigan College");
             ConsoleUtil.DisplayMessage("");
 
