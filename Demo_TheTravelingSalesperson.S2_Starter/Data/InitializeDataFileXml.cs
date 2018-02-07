@@ -26,5 +26,12 @@ namespace Demo_TheTravelingSalesperson
 
             return salesperson;
         }
+
+        public void SeedDataFile()
+        {
+            XmlServices xmlService = new XmlServices(DataSettings.dataFilePathXml);
+
+            xmlService.WriteSalespersonToDataFile(InitializeSalesperson());
+        }
     }
 }

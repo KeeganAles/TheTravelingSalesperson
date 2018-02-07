@@ -45,6 +45,7 @@
     <Compile Include="Controllers\Controller.cs" />
     <Compile Include="Data\DataSettings.cs" />
     <Compile Include="Data\InitializeDataFileXml.cs" />
+    <Compile Include="Data\XmlServices.cs" />
     <Compile Include="Models\MenuOption.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Salesperson.cs" />

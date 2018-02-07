@@ -9,7 +9,6 @@ namespace Demo_TheTravelingSalesperson
     static class DataSettings
     {
         public const string dataFilePathXml = "Data\\Data.xml";
-        public const string dataFilePathCsv = "Data\\Data.txt";
     }
 
 }
