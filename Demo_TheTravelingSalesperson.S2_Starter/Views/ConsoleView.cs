@@ -444,6 +444,36 @@ namespace Demo_TheTravelingSalesperson
             DisplayContinuePrompt();
         }
 
+        public void DisplayAccountDetail(Salesperson salesperson)
+        {
+
+        }
+
+        public void DisplayConfirmLoadAccountInfo(Salesperson salesperson)
+        {
+
+        }
+
+        public void DisplayConfirmSaveAccountInfo()
+        {
+
+        }
+
+        public void DisplayLoadAccountInfo(out bool maxAttemptsExceeded)
+        {
+
+        }
+
+        public void DisplayLoadAccountInfo(Salesperson salesperson, out bool maxAttemptsExceeded)
+        {
+
+        }
+
+        public void DisplaySaveAccountInfo(Salesperson salesperson, out bool maxAttemptsExceeded)
+        {
+
+        }
+
         /// <summary>
         /// changes string to lowercase with first letter uppercase
         /// adapted from: https://www.dotnetperls.com/uppercase-first-letter
