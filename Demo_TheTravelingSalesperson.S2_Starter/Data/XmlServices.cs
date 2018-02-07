@@ -34,7 +34,14 @@ namespace Demo_TheTravelingSalesperson
 
         static void WriteSalespersonToDataFile(Salesperson salesperson)
         {
+            XmlSerializer serializer = new XmlSerializer(typeof(Salesperson), new XmlRootAttribute("Salesperson"));
 
+            StreamWriter sWriter = new StreamWriter(_dataFilePath);
+
+            using (sWriter)
+            {
+                serializer.Serialize(sWriter, salesperson);
+            }
         }
 
         public XmlServices(string dataFilePath)
