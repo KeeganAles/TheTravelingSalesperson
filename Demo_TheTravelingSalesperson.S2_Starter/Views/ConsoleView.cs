@@ -226,12 +226,15 @@ namespace Demo_TheTravelingSalesperson
                 ConsoleUtil.DisplayMessage("Please type the number of your menu choice.");
                 ConsoleUtil.DisplayMessage("");
                 Console.Write(
-                    "\t" + "1. Travel" + Environment.NewLine +
-                    "\t" + "2. Buy" + Environment.NewLine +
-                    "\t" + "3. Sell" + Environment.NewLine +
-                    "\t" + "4. Display Inventory" + Environment.NewLine +
-                    "\t" + "5. Display Cities" + Environment.NewLine +
-                    "\t" + "6. Display Account Info" + Environment.NewLine +
+                    "\t" + "1. Setup Account" + Environment.NewLine +
+                    "\t" + "2. Travel" + Environment.NewLine +
+                    "\t" + "3. Buy" + Environment.NewLine +
+                    "\t" + "4. Sell" + Environment.NewLine +
+                    "\t" + "5. Display Inventory" + Environment.NewLine +
+                    "\t" + "6. Display Cities" + Environment.NewLine +
+                    "\t" + "7. Display Account Info" + Environment.NewLine +
+                    "\t" + "8. Save Account Info" + Environment.NewLine +
+                    "\t" + "9. Load Account Info" + Environment.NewLine +
                     "\t" + "E. Exit" + Environment.NewLine);
 
                 //
@@ -242,27 +245,39 @@ namespace Demo_TheTravelingSalesperson
                 switch (userResponse.KeyChar)
                 {
                     case '1':
-                        userMenuChoice = MenuOption.Travel;
+                        userMenuChoice = MenuOption.SetupAccount;
                         usingMenu = false;
                         break;
                     case '2':
-                        userMenuChoice = MenuOption.Buy;
+                        userMenuChoice = MenuOption.Travel;
                         usingMenu = false;
                         break;
                     case '3':
-                        userMenuChoice = MenuOption.Sell;
+                        userMenuChoice = MenuOption.Buy;
                         usingMenu = false;
                         break;
                     case '4':
-                        userMenuChoice = MenuOption.DisplayInventory;
+                        userMenuChoice = MenuOption.Sell;
                         usingMenu = false;
                         break;
                     case '5':
-                        userMenuChoice = MenuOption.DisplayCities;
+                        userMenuChoice = MenuOption.DisplayInventory;
                         usingMenu = false;
                         break;
                     case '6':
+                        userMenuChoice = MenuOption.DisplayCities;
+                        usingMenu = false;
+                        break;
+                    case '7':
                         userMenuChoice = MenuOption.DisplayAccountInfo;
+                        usingMenu = false;
+                        break;
+                    case '8':
+                        userMenuChoice = MenuOption.SaveAccountInfo;
+                        usingMenu = false;
+                        break;
+                    case '9':
+                        userMenuChoice = MenuOption.LoadAccountInfo;
                         usingMenu = false;
                         break;
                     case 'E':
