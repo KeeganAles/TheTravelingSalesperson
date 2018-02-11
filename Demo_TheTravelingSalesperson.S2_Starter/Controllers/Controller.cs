@@ -76,7 +76,7 @@ namespace Demo_TheTravelingSalesperson
             //
             // setup initial salesperson account
             //
-            _salesperson = _consoleView.DisplaySetupAccount();
+           // _salesperson = _consoleView.DisplaySetupAccount();
 
             //
             // application loop
@@ -104,6 +104,15 @@ namespace Demo_TheTravelingSalesperson
                         break;
                     case MenuOption.Sell:
                         Sell();
+                        break;
+                    case MenuOption.SetupAccount:
+                        SetupAccount();
+                        break;
+                    case MenuOption.SaveAccountInfo:
+                        DisplaySaveAccountInfo();
+                        break;
+                    case MenuOption.LoadAccountInfo:
+                        DisplayLoadAccountInfo();
                         break;
                     case MenuOption.DisplayInventory:
                         DisplayInventory();
@@ -181,6 +190,50 @@ namespace Demo_TheTravelingSalesperson
             if (_salesperson.CurrentStock.OnBackorder)
             {
                 _consoleView.DisplayBackorderNotification(_salesperson.CurrentStock, numberOfUnits);
+            }
+        }
+
+        private void SetupAccount()
+        {
+            _salesperson = _consoleView.DisplaySetupAccount();
+        }
+
+        private void DisplayLoadAccountInfo()
+        {
+            bool maxAttemptsExceeded = false;
+            bool loadAccountInfo = false;
+
+            if (_salesperson.AccountID != "")
+            {
+                loadAccountInfo = _consoleView.DisplayLoadAccountInfo(_salesperson, out maxAttemptsExceeded);
+            }
+            else
+            {
+                loadAccountInfo = _consoleView.DisplayLoadAccountInfo(out maxAttemptsExceeded);
+            }
+
+            if (loadAccountInfo && !maxAttemptsExceeded)
+            {
+                XmlServices xmlServices = new XmlServices(DataSettings.dataFilePathXml);
+
+                _salesperson = xmlServices.ReadSalespersonFromDataFile();
+
+                _consoleView.DisplayConfirmLoadAccountInfo(_salesperson);
+            }
+        }
+
+        private void DisplaySaveAccountInfo()
+        {
+            bool maxAttemptsExceeded = false;
+            bool saveAccountInfo = false;
+
+            saveAccountInfo = _consoleView.DisplaySaveAccountInfo(_salesperson, out maxAttemptsExceeded);
+
+            if (saveAccountInfo && !maxAttemptsExceeded)
+            {
+                XmlServices xmlServices = new XmlServices(DataSettings.dataFilePathXml);
+
+                xmlServices.WriteSalespersonToDataFile(_salesperson);
             }
         }
 

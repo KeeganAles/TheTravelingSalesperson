@@ -32,7 +32,7 @@ namespace Demo_TheTravelingSalesperson
             return salesperson;
         }
 
-        static void WriteSalespersonToDataFile(Salesperson salesperson)
+        public void WriteSalespersonToDataFile(Salesperson salesperson)
         {
             XmlSerializer serializer = new XmlSerializer(typeof(Salesperson), new XmlRootAttribute("Salesperson"));
 
