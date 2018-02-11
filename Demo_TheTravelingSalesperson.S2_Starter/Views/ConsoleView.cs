@@ -451,17 +451,46 @@ namespace Demo_TheTravelingSalesperson
 
         public void DisplayConfirmLoadAccountInfo(Salesperson salesperson)
         {
+            ConsoleUtil.HeaderText = "Load Account";
+            ConsoleUtil.DisplayReset();
 
+            ConsoleUtil.DisplayMessage("Account information loaded.");
+
+            DisplayAccountDetail(salesperson);
+
+            DisplayContinuePrompt();
         }
 
         public void DisplayConfirmSaveAccountInfo()
         {
+            ConsoleUtil.HeaderText = "Save Account";
+            ConsoleUtil.DisplayReset();
 
+            ConsoleUtil.DisplayMessage("Account information saved.");
+
+            DisplayContinuePrompt();
         }
 
-        public void DisplayLoadAccountInfo(out bool maxAttemptsExceeded)
+        public bool DisplayLoadAccountInfo(out bool maxAttemptsExceeded)
         {
+            string userResponse;
+            maxAttemptsExceeded = false;
 
+            ConsoleUtil.HeaderText = "Load Account";
+            ConsoleUtil.DisplayReset();
+
+            ConsoleUtil.DisplayMessage("");
+            userResponse = ConsoleValidator.GetYesNoFromUser(MAXIMUM_ATTEMPTS, "Load the account information?", out maxAttemptsExceeded);
+
+            if (maxAttemptsExceeded)
+            {
+                ConsoleUtil.DisplayMessage("It appears you are having difficulty. You will return to the main menu.");
+                return false;
+            }
+            else
+            {
+                return userResponse == "YES" ? true : false;
+            }
         }
 
         public void DisplayLoadAccountInfo(Salesperson salesperson, out bool maxAttemptsExceeded)
@@ -469,9 +498,29 @@ namespace Demo_TheTravelingSalesperson
 
         }
 
-        public void DisplaySaveAccountInfo(Salesperson salesperson, out bool maxAttemptsExceeded)
+        public bool DisplaySaveAccountInfo(Salesperson salesperson, out bool maxAttemptsExceeded)
         {
+            string userResponse;
+            maxAttemptsExceeded = false;
 
+            ConsoleUtil.HeaderText = "Save Account";
+            ConsoleUtil.DisplayReset();
+
+            ConsoleUtil.DisplayMessage("The current account information.");
+            DisplayAccountDetail(salesperson);
+
+            ConsoleUtil.DisplayMessage("");
+            userResponse = ConsoleValidator.GetYesNoFromUser(MAXIMUM_ATTEMPTS, "Save the account information?", out maxAttemptsExceeded);
+
+            if (maxAttemptsExceeded)
+            {
+                ConsoleUtil.DisplayMessage("It appears you are having difficulty. You will return to the main menu.");
+                return false;
+            }
+            else
+            {
+                return userResponse == "YES" ? true : false;
+            }
         }
 
         /// <summary>
