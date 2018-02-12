@@ -10,7 +10,7 @@ namespace Demo_TheTravelingSalesperson
 {
     class XmlServices
     {
-        private string _dataFilePath;
+        string _dataFilePath;
 
         public Salesperson ReadSalespersonFromDataFile()
         {
@@ -46,7 +46,7 @@ namespace Demo_TheTravelingSalesperson
 
         public XmlServices(string dataFilePath)
         {
-
+            _dataFilePath = dataFilePath;
         }
     }
 }

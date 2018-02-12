@@ -16,16 +16,6 @@ namespace Demo_TheTravelingSalesperson
 
         private Product _currentStock;
 
-        public Product CurrentStock
-        {
-            get { return _currentStock; }
-            set { _currentStock = value; }
-        }
-
-
-
-
-
         #endregion
 
         #region PROPERTIES
@@ -54,7 +44,12 @@ namespace Demo_TheTravelingSalesperson
             set { _citiesVisited = value; }
         }
 
-        
+        public Product CurrentStock
+        {
+            get { return _currentStock; }
+            set { _currentStock = value; }
+        }
+
         #endregion
 
         #region CONSTRUCTORS
